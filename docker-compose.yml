@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  user-service:
+    build:
+      context: ./docker/user-service
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    healthcheck:
+      test: [ "CMD", "wget", "-q", "--spider", "http://localhost:3001/health" ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  order-service:
+    build:
+      context: ./docker/order-service
+      dockerfile: Dockerfile
+    ports:
+      - "3002:3002"
+    healthcheck:
+      test: [ "CMD", "wget", "-q", "--spider", "http://localhost:3002/health" ]
+      interval: 10s
+      timeout: 5s
+      retries: 3

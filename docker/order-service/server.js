@@ -1,9 +1,9 @@
-const express = require('express');
+import express, { json } from 'express';
 const app = express();
 const PORT = 3002;
 
 // Middleware to parse JSON bodies
-app.use(express.json());
+app.use(json());
 
 // In-memory orders data
 let orders = [

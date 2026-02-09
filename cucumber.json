@@ -1,0 +1,17 @@
+{
+    "default": {
+        "requireModule": [
+            "ts-node/register"
+        ],
+        "require": [
+            "tests/steps/user-orders.steps.ts"
+        ],
+        "paths": [
+            "tests/features/user-orders.feature"
+        ],
+        "format": [
+            "progress"
+        ],
+        "publishQuiet": true
+    }
+}
